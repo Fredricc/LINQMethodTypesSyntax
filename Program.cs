@@ -13,6 +13,10 @@
                         where n <= 3
                         select n;
 
+            var count = (from n in numberList
+                        where n <= 3
+                        select n).Count();
+
             IEnumerable<int> query2 = numberList.Where(i => i <= 3);
 
             //Step 3: Execute query
@@ -20,6 +24,7 @@
             {
                 Console.WriteLine(nn);
             }
+            Console.WriteLine($"\nNumber of queries: {count}\n ");
             Console.WriteLine("Using LINQ : Method syntax type.");
 
             foreach (var ii in query2)
